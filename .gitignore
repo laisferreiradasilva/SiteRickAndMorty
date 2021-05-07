@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/BusinessLayer/bin/Debug
+/BusinessLayer/obj/Debug
+/ServiceLayer/bin/Debug
+/ServiceLayer/obj/Debug
+/SiteRickAndMorty/.vs/SiteRickAndMorty/config
+/SiteRickAndMorty/.vs/SiteRickAndMorty/v16
+/SiteRickAndMorty/bin
+/SiteRickAndMorty/obj/Debug

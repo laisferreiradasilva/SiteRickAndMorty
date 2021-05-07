@@ -1,0 +1,28 @@
+﻿@model BusinessLayer.ListOfCharacters.ViewModel
+@{
+    ViewBag.Title = "CharacterDetails";
+}
+<a href="/Initial/ListOfCharacters">Back</a>
+<br />
+<br />
+@if (Model.Character != null)
+{
+
+    <h3> Morty Smith</h3>
+    <label>@Model.Character.Resume</label>
+    <br />
+    <br />
+    <h3>Biograph</h3>
+    <label>@Model.Character.Biography</label>
+    <br />
+    <br />
+    <h3>Personality</h3>
+    <label>
+        @Model.Character.Personality
+    </label>
+}
+else
+{
+    <label>Character not found</label>
+}
+

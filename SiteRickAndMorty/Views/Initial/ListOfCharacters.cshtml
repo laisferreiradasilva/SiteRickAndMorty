@@ -1,0 +1,70 @@
+﻿@model BusinessLayer.ListOfCharacters.ViewModel
+@{
+    ViewBag.Title = "ListOfCharacters";
+}
+@if (Model.Message != null)
+{
+    <label>@Model.Message</label>
+}
+@using (Html.BeginForm())
+{
+    <label>Name search:</label>
+    @Html.TextBoxFor(t => t.SearchName, new { @oninput = "countFunction()", @id = "SearchName" })
+    <div>
+        <label id="label_count"></label>
+    </div>
+    <br />
+    <br />
+    <label>Search for status:</label>
+    @Html.DropDownListFor(t => t.SearchStatus, Model.Status)
+    <br />
+    <br />
+    <label>Gender search:</label>
+    @Html.DropDownListFor(t => t.SearchGender, Model.Gender)
+    <br />
+    <br />
+    <button type="submit">Search</button>
+    <br />
+    <br />
+    if ((Model.Characters != null) && Model.Characters.Count == 0)
+    {
+        <label>Character not found</label>
+    }
+    else
+    {
+        <table>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Gender
+                </th>
+            </tr>
+            @foreach (var character in Model.Characters)
+            {
+                <tr>
+                    <td>
+                        <a href="/Initial/CharacterDetails?SearchNameDetail=@character.Name">@character.Name</a>
+                    </td>
+                    <td>
+                        <a href="/Initial/CharacterDetails?SearchNameDetail=@character.Name">@character.Status</a>
+                    </td>
+                    <td>
+                        <a href="/Initial/CharacterDetails?SearchNameDetail=@character.Name">@character.Gender</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    <br />
+    <br />
+    <label>1</label>
+    <label>2</label>
+    <label>3</label>
+    <label>4</label>
+    <label>5</label>
+}
